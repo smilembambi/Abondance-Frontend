@@ -3,3 +3,6 @@ export class CategorieDetailModel {
   nom: string;
 
 }
+
+
+
