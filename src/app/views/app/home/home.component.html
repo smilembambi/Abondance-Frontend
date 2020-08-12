@@ -1,0 +1,157 @@
+<app-header></app-header>
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+    <h1>Bienvenue chez</h1>
+    <h1>Abondance Formation</h1>
+    <div class="separator"></div>
+    <h2>Acteur de développement des compétences<br>
+      et des entreprises</h2>
+  </div>
+</section><!-- End Hero -->
+
+<main id="main">
+
+  <!-- ======= Catalogue Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="row back_service ">
+        <div class="col-md-6 catalogue" >
+          <img src="assets/img/catalogue.png" alt="" >
+        </div>
+        <div class="col-md-6 detailcatalogue" style="float:none;margin:auto;" >
+          <div style="width: 80%; margin: auto;">
+            <h1>Retrouvez le catalogue de nos formations</h1>
+            <span>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitaon</span>
+            <br>
+
+            <a href="assets/files/catalogue.pdf" target="_blank" >
+              <button class="btnHover" style=" margin-top:20px; text-align: center; border-radius: 3px; font-size: 10px"  >
+                Télécharger le</button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+
+
+  <!-- ======= Agenda Section ======= -->
+  <section id="appointment" class="appointment section-bg" style="background: url(assets/img/deco.jpg);
+    background-repeat: no-repeat;
+      background-size: 650px;
+      background-color: #5b42b0;
+      background-position: top right;
+    ">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-8" style="font-size: 10px;">
+
+
+          <div class="section-title" style="color: white;">
+            <h2> Notre agenda de formations</h2>
+          </div>
+
+          <div class="col-md-12 marginTop15" *ngFor="let formation of formations">
+            <div class="row agenda cliquable formationHover" (click)="view(formation)" >
+              <div class="col-md-1 place1" ><span>
+                {{ getJour(formation.date) }}
+              </span> <div>{{ getMois(formation.date) }}</div></div>
+              <div class="col-md-1 place1" style="margin-left: -25px">
+                <img src="assets/img/formation/{{formation.image}}" alt>
+              </div>
+              <div class="col-md-4 place2" style="margin-left: 20px"> {{ formation.nom }} </div>
+              <div class="col-md-3 place3">
+                <div class="marginTop15"> <i class="fa fa-clock"></i>
+                  <span>{{ getJourFr(formation.date) }} à {{ getHeure(formation.heureDebut) }} </span></div>
+              </div>
+              <div class="col-md-3 place3" >
+                <i class="fa fa-map-marker-alt marginTop15" style="float: left;" ></i>
+                <div class="place4"> {{ formation.lieu }}</div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-12 marginTop15 cliquable"  style="text-align: center;">
+            <a href="javascript:;" routerLink="./plusdate">
+              <button class="btn1"> Plus des dates</button>
+            </a>
+           </div>
+
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+      </div>
+    </div>
+  </section><!-- End Appointment Section -->
+
+
+
+
+  <!-- ======= Elite Section ======= -->
+  <section id="elite" class="d-flex align-items-center" style="background: url(assets/img/elite.jpg);
+    ">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-3">&nbsp;</div>
+        <div class="col-md-6" style="font-size: 10px;">
+
+
+          <div class="section-title1" style="color: white;">
+            <h2> Elite Entrepreneur</h2>
+          </div>
+
+          <div class="col-md-12">
+            <div class="row elite">
+              <h1>
+                Décidez de construire votre futur d’entrepreneur dès aujourd’hui.
+              </h1>
+              <div style="text-align: center;">
+                Démarrage depuis le 23 mai 2020  (inscription toujours disponible)
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-12 marginTop15" style="text-align: center;">
+            <a href="javascript:;" routerLink="./elite">
+              <button class="btnElite"> Inscrivez-vous</button>
+            </a>
+          </div>
+
+        </div>
+        <div class="col-md-3">&nbsp;</div>
+      </div>
+    </div>
+  </section><!-- End Appointment Section -->
+
+
+
+  <!-- ======= new letter Section ======= -->
+  <section id="services1" class="services" style="margin-top: 30px; padding-bottom: 30px;">
+    <div class="container">
+      <div class="row back_newletter">
+        <div class="col-md-6 newletter" >
+          <img src="assets/img/newletter.png"  alt="">
+        </div>
+        <div class="col-md-6 detailcatalogue" style="float:none;margin:auto;" >
+          <div style="width: 80%; margin: auto;">
+            <h1 style="font-size: 25px">Vous souhaitez connaître
+              notre actualité et recevoir
+              notre newsletter ?
+            </h1>
+            <br>
+            <button class="btn2" (click)="openModal()" > Inscrivez-vous</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Services Section -->
+</main><!-- End #main -->
+
+<app-footer-site></app-footer-site>

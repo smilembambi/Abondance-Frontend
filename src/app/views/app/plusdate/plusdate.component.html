@@ -1,0 +1,57 @@
+<app-header></app-header>
+<!-- ======= Hero Section ======= -->
+
+<main id="main">
+
+
+  <!-- ======= Agenda Section ======= -->
+  <section id="appointment" class="appointment section-bg" style="background: url(assets/img/deco.jpg);
+    background-repeat: no-repeat;
+      background-size: 650px;
+      background-color: #5b42b0;
+      background-position: top right;
+    ">
+    <div class="container" >
+      <div class="row">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-8" style="font-size: 10px;">
+
+
+          <div class="section-title" style="color: white; margin-top: 80px">
+            <h2> Notre agenda de formations</h2>
+          </div>
+
+
+
+          <div class="col-md-12 marginTop15" *ngFor="let formation of formations">
+            <div class="row agenda cliquable formationHover" (click)="view(formation)" >
+              <div class="col-md-1 place1" ><span>
+                {{ getJour(formation.date) }}
+              </span> <div>{{ getMois(formation.date) }}</div></div>
+              <div class="col-md-1 place1" style="margin-left: -25px">
+                <img src="assets/img/formation/{{formation.image}}" alt>
+              </div>
+              <div class="col-md-4 place2" style="margin-left: 20px"> {{ formation.nom }} </div>
+              <div class="col-md-3 place3">
+                <div class="marginTop15"> <i class="fa fa-clock"></i>
+                  <span>{{ getJourFr(formation.date) }} à {{ getHeure(formation.heureDebut) }} </span></div>
+              </div>
+              <div class="col-md-3 place3" >
+                <i class="fa fa-map-marker-alt marginTop15" style="float: left;" ></i>
+                <div class="place4"> {{ formation.lieu }}</div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+      </div>
+    </div>
+  </section><!-- End Appointment Section -->
+
+
+</main><!-- End #main -->
+
+<app-footer-site></app-footer-site>

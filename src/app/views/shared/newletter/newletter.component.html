@@ -1,0 +1,46 @@
+
+
+
+
+<div class="modal demo-modal">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">S'inscrire</h5>
+        <button type="button" class="close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     
+        <form class="php-email-form" [formGroup]="contactForm">
+          <div class="form-row">
+            <div class="col-md-6 form-group">
+              <input type="text"  class="form-control"
+                     formControlName="nom"
+                     placeholder="Nom" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-6 form-group">
+              <input type="email" class="form-control"
+                     formControlName="prenom"
+                     placeholder="Prénom" data-rule="email" data-msg="Please enter a valid email" />
+              <div class="validate"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" class="form-control"
+                   formControlName="email"
+                   placeholder="Email" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+            <div class="validate"></div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  (click)="creer()" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-light">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

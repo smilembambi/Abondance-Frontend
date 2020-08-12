@@ -1,0 +1,45 @@
+  <div class="d-flex align-items-center auth px-0" style="margin-top: 50px">
+  <div class="row w-100 mx-0">
+    <div class="col-lg-4 mx-auto">
+      <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+        <div class="brand-logo" style="text-align: center;">
+          <img src="assets/images/logo.png" alt="logo" style="width: 200px">
+        </div>
+        <h4 style="font-size: 13px">Bonjour,</h4>
+        <h6 class="font-weight-light" style="font-size: 15px">Connectez-vous pour continuer</h6>
+
+          <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <input type="email" style="font-size: 13px"
+                   formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+                   class="form-control form-control-lg" id="exampleInputEmail1" placeholder="compte">
+          </div>
+          <div class="form-group">
+            <input style="font-size: 13px"
+              formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Mot de passe">
+          </div>
+          <div class="mt-3">
+
+            <button (click)="onSubmit()" [disabled]="loading" class="btn btn-block btn-primary
+            btn-lg font-weight-medium auth-form-btn" routerLink="/dashboard">
+              <span *ngIf="loading"  style="float: right; margin-top: 0px"> <i class="spinner-grow"></i></span>
+              Se connecter</button>
+          </div>
+          <div class="my-2 d-flex justify-content-between align-items-center">
+            <div class="form-check">
+              <label class="form-check-label text-muted">
+                <input type="checkbox" class="form-check-input">
+                <i class="input-helper"></i>
+                Rester connecté
+              </label>
+            </div>
+            <a href="javascript:;" class="auth-link text-black">Mot de passe?</a>
+          </div>
+
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

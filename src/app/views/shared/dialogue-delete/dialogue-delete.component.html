@@ -1,0 +1,11 @@
+
+
+<mat-dialog-content class="mat-typography">
+  <h3>Suppression</h3>
+  <p>Voulez-vous supprimer cette donnée</p>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Annuler</button>
+  <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Supprimer</button>
+</mat-dialog-actions>

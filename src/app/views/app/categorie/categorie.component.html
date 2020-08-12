@@ -1,0 +1,73 @@
+<app-header></app-header>
+
+<main id="main">
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts section-bg" style="background: url(assets/img/deco.jpg);
+       background-repeat: no-repeat;
+      background-size: 650px;
+      background-color: #5b42b0;
+      background-position: top right; ">
+    <div class="container" *ngIf="loading">
+
+      <div class="row" style="padding: 20px; ">
+        <div class="col-md-12" style="
+            text-align: left;
+            font-weight: 800; margin-top: 80px; margin-bottom: 20px; font-size: 45px; color: #fff;">
+          <div style="color: white; text-align: left; ">
+            <h2> Formations : {{ categorie.nom }}</h2>
+          </div>
+          <div style="border-bottom: #2bc465 1px solid; width: 60px;"></div>
+        </div>
+
+
+        <div class="col-md-9" style="
+          font-size: 12px; line-height: 19px;
+          margin-bottom: 30px; padding: 20px; color: #fff;  ">
+          {{ categorie.description }}
+        </div>
+        <div class="col-md-3"> </div>
+
+
+        <div class="col-lg-12 col-md-6">
+          <div style="background-color: #f5f5f7;padding: 20px; border-radius: 3px;">
+            <p>{{ categorie.nom }}</p>
+            <div style="background-color: #fff; padding: 10px; ">
+              <div class="container" >
+                <div class="row">
+                  <div class="col-md-12" style="font-size: 13px;">
+                    <div *ngFor="let formation of formations" class="col-md-12" style="margin-top: 15px;">
+                      <div class="row agenda cliquable formationHover" (click)="view(formation)" >
+                        <div class="col-md-1 place1" style="color: #3A3A3A"  ><span>
+                {{ getJour(formation.date) }}
+              </span> <div style="color: #3A3A3A" >{{ getMois(formation.date) }}</div></div>
+                        <div class="col-md-1 place1" style="margin-left: -25px">
+                          <img src="assets/img/formation/{{formation.image}}" alt>
+                        </div>
+                        <div class="col-md-4 place2" style="margin-left: 20px; color: #3A3A3A"> {{ formation.nom }} </div>
+                        <div class="col-md-3 place3">
+                          <div class="marginTop15"> <i class="fa fa-clock"></i>
+                            <span style="margin-left: 20px; color: #3A3A3A">{{ getJourFr(formation.date) }} à {{ getHeure(formation.heureDebut) }} </span></div>
+                        </div>
+                        <div class="col-md-3 place3" >
+                          <i class="fa fa-map-marker-alt marginTop15" style="float: left;" ></i>
+                          <div class="place4" style="margin-left: 20px; color: #3A3A3A"> {{ formation.lieu }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+    </div>
+  </section><!-- End Counts Section -->
+</main><!-- End #main -->
+
+<app-footer-site></app-footer-site>

@@ -1,0 +1,45 @@
+<app-header></app-header>
+<main id="main">
+
+
+
+  <!-- ======= Doctors Section ======= -->
+  <section id="doctors" class="doctors" style="background: url(assets/img/deco1.jpg);
+       background-repeat: no-repeat;
+      background-size: 100% 350px;
+      background-position: top right; " >
+    <div class="container" style="margin-top: 100px">
+
+      <div class="section-title">
+        <h2 style="color: #fff">Formations</h2>
+        <p style="color: #fff">Catégorie de formation</p>
+      </div>
+
+      <div class="row" style="margin-top: 100px">
+
+        <div class="col-lg-6" *ngFor="let categorie of categories" style="margin:  20px 0; " >
+          <div class="member d-flex align-items-start" >
+            <div class="pic"><img src="assets/img/categorie/{{ categorie.image }}" class="img-fluid" alt=""></div>
+            <div class="member-info">
+              <h4>{{ categorie.nom }}</h4>
+              <span>{{ categorie.nombreFormation }} formation{{ categorie.nombreFormation > 1 ? 's' : '' }}</span>
+              <p>{{ categorie.description }}</p>
+              <div class="social">
+                <div
+                  (click)="getFormation(categorie.id)"
+                  
+                  style="cursor: pointer; padding: 9px 20px; border-radius: 3px; background-color: #5b42b0; color: #fff; font-size: 11px  ">Consulter</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section><!-- End Doctors Section -->
+
+</main><!-- End #main -->
+
+<app-footer-site></app-footer-site>

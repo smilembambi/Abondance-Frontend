@@ -1,0 +1,39 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+
+    <h1 class="logo mr-auto">
+      <a href="index.html">
+        <img class="logoImage" src="assets/img/logo.png">
+      </a>
+    </h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li class="active cliquable" >
+          <a (click)="getNav('')">Accueil</a></li>
+        <li class="drop-down cliquable">
+          <a (click)="getNav('formations')">Formation</a>
+          <ul>
+            <li class="cliquable" *ngFor="let categorie of categories">
+              <a (click)="getCategorie(categorie.id)" >
+                {{ categorie.nom }}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="cliquable"><a (click)="getNav('agenda')">Agenda</a></li>
+        <li class="cliquable"><a (click)="getNav('elite')">Elite Entrepreneur</a></li>
+        <li class="cliquable"><a (click)="getNav('financement')">Financements</a></li>
+        <li class="cliquable"><a (click)="getNav('engagement')">Engagement</a></li>
+        <li class="cliquable"><a (click)="getNav('contact')">Contact</a></li>
+
+      </ul>
+    </nav><!-- .nav-menu -->
+
+    <a  class="appointment-btn scrollto"><i class="fa fa-search"></i></a>
+
+  </div>
+</header><!-- End Header -->

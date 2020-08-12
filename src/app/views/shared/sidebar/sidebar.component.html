@@ -1,0 +1,122 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+  <ul class="nav">
+
+    <!-- Profil Utilisateur -->
+    <li class="nav-item nav-profile">
+      <a href="javascript:;" class="nav-link">
+        <div class="nav-profile-image">
+          <img src="assets/images/faces/face14.jpg" style="opacity: 0.7" alt="profile">
+          <span class="login-status online"></span> <!--change to offline or busy as needed-->
+        </div>
+        <div class="nav-profile-text">
+          <span class="font-weight-bold mb-2">{{ userNom }}</span>
+          <span class="text-secondary text-small">{{ role }}</span>
+        </div>
+        <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+      </a>
+    </li>
+
+
+    <!-- Accueil -->
+    <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
+      <a class="nav-link" routerLink="home" routerLinkActive #dashboard="routerLinkActive">
+        <span class="menu-title">Tableau de bord</span>
+        <i class="mdi mdi-monitor-dashboard menu-icon"></i>
+      </a>
+    </li>
+
+
+    <!-- Etablissement -->
+    <li class="nav-item" [ngClass]="{ 'active': etablissement.isActive }">
+      <a class="nav-link" routerLink="etablissement" routerLinkActive #etablissement="routerLinkActive">
+        <span class="menu-title">Etabllissement</span>
+        <i class="fa fa-building menu-icon"></i>
+      </a>
+    </li>
+
+
+    <!-- Statistiques -->
+    <li class="nav-item" [ngClass]="{ 'active': statistique.isActive }">
+      <a class="nav-link" routerLink="statistique" routerLinkActive #statistique="routerLinkActive">
+        <span class="menu-title">Statistique</span>
+        <i class="mdi mdi-chart-bar menu-icon"></i>
+      </a>
+    </li>
+
+
+    <!-- Apprenant -->
+    <li class="nav-item" [ngClass]="{ 'active': apprenant.isActive }">
+      <a class="nav-link" routerLink="apprenant" routerLinkActive #apprenant="routerLinkActive">
+        <span class="menu-title">Apprenant</span>
+        <i class="fa fa-user-graduate menu-icon"></i>
+      </a>
+    </li>
+
+
+    <!-- Enseignant -->
+    <li class="nav-item" [ngClass]="{ 'active': enseignant.isActive }">
+      <a class="nav-link" routerLink="enseignant" routerLinkActive #enseignant="routerLinkActive">
+        <span class="menu-title">Enseignant</span>
+        <i class="fa fa-chalkboard-teacher menu-icon" style="font-size: 16px"></i>
+      </a>
+    </li>
+
+
+    <!-- Administratif -->
+    <li class="nav-item" [ngClass]="{ 'active': administratif.isActive }">
+      <a class="nav-link" routerLink="administratif" routerLinkActive #administratif="routerLinkActive">
+        <span class="menu-title">Administratif</span>
+        <i class="fa fa-user-tie menu-icon"></i>
+      </a>
+    </li>
+
+
+
+    <!-- Cours -->
+    <li class="nav-item" [ngClass]="{ 'active': cours.isActive }">
+      <a class="nav-link" routerLink="cours" routerLinkActive #cours="routerLinkActive">
+        <span class="menu-title">Cours</span>
+        <i class="mdi mdi-book-open-page-variant menu-icon"></i>
+      </a>
+    </li>
+
+
+    <!-- Administration -->
+    <li class="nav-item" [ngClass]="{'active' : province.isActive || ville.isActive || commune.isActive || division.isActive || sousDivision.isActive }">
+      <a class="nav-link" (click)="uiBasicCollapsed = !uiBasicCollapsed" [attr.aria-expanded]="uiBasicCollapsed" aria-controls="ui-basic">
+        <span class="menu-title">Administrations</span>
+        <i class="menu-arrow"></i>
+        <i class="fa fa-cogs menu-icon" style="font-size: 16px"></i>
+      </a>
+      <div class="collapse" id="ui-basic" [ngbCollapse]="!uiBasicCollapsed">
+        <ul class="nav flex-column sub-menu" >
+          <li class="nav-item">
+            <a class="nav-link" routerLink="province" routerLinkActive="active"
+               #province="routerLinkActive">Province
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="ville" routerLinkActive="active"
+               #ville="routerLinkActive">Ville
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="commune" routerLinkActive="active"
+               #commune="routerLinkActive">Commune
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="division" routerLinkActive="active"
+               #division="routerLinkActive">Division
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="sous-division" routerLinkActive="active"
+               #sousDivision="routerLinkActive">Sous-division
+            </a>
+          </li> </ul>
+      </div>
+    </li>
+
+  </ul>
+</nav>
