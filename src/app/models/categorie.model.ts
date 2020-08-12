@@ -5,3 +5,6 @@ export class CategorieModel {
   image: string;
   nombreFormation: number;
 }
+
+
+
